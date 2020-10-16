@@ -62,7 +62,10 @@ typedef struct {
 
 ## ソースコードの説明
 65行目～　入力したidをリニアサーチで探索
+　　　　　比較対象の位置を先頭にし、結果を見つからなかったにする(result=-1)。
+　　　　　入力したidと比較対象の値を比較し、一致していたらその時の値をresultに入れる(pos=result)。posを一つ進める。これをposがリス　　　　　トのsizeより大きくなるまで繰り返す。resultの値を返す(return result)。
 85行目～　入力したidをバイナリサーチで探索
+　　　　　リニアサーチの時と同様に、pos=0,result=-1にする。リストの左端(left)と右端(right)をそれぞれ0とリストの最後のindexにする      　比較対象の位置をリストの真ん中の値にする(pos = left + (right - left) / 2)。値が一致していればその時の値をresultに入れる　　　　　(pos=result)。探す値が大きければリストの左端をposの一つ右にし(left=pos+1)、小さければリストの右端をposの一つ左にする　　　　　(right=pos-1)。これをリストの値がなくなるまで繰り返す(while(left <= right))。resultの値を返す(return result)。
 
 
 
