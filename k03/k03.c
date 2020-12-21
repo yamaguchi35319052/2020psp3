@@ -42,11 +42,11 @@ char* ForceSearch(char text[], char key[])
 char* BMSearch(char text[], char key[])
 {
     //  ここを実装する
-    char c;
+    char* c;
     int index;
     int key_index;
     int text_len, key_len;
-    int* table[256];
+    int table[256];
 
     text_len = strlen(text);
     key_len = strlen(key);
@@ -61,7 +61,7 @@ char* BMSearch(char text[], char key[])
     }
 
     key_index = key_len-1;
-    while(text[key_index] !=NULL)
+    while(text[key_index] !=key_len)
     {
         c = &text[key_index-(key_len-1)];
         for(index = 0;key[index] !=0; index++)
