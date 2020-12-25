@@ -61,7 +61,7 @@ char* BMSearch(char text[], char key[])
     }
 
     key_index = key_len-1;
-    while(text[key_index] !=key_len)
+    while(text[key_index] !=text_len)
     {
         c = &text[key_index-(key_len-1)];
         for(index = 0;key[index] !=0; index++)
