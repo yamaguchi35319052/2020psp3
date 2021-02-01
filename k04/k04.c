@@ -130,11 +130,11 @@ void QuickSort(City arrayCity[], int left, int right)
             }
         }
 
-        if(j >= i)
+        if(i >= j)
         {
             tempCity = arrayCity[pivot];
-            arrayCity[pivot] = arrayCity[i];
-            arrayCity[i] = tempCity;
+            arrayCity[pivot] = arrayCity[j];
+            arrayCity[j] = tempCity;
 
             QuickSort(arrayCity,left,i-1);
             QuickSort(arrayCity,i+1,right);
