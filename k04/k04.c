@@ -121,7 +121,7 @@ void QuickSort(City arrayCity[], int left, int right)
             }
         }
 
-        for(pos=right;pos<=left; pos++)
+        for(pos=right;pos<=left; pos--)
         {
             if(arrayCity[pos].seafood >= arrayCity[pivot].seafood)
             {
@@ -136,8 +136,8 @@ void QuickSort(City arrayCity[], int left, int right)
             arrayCity[pivot] = arrayCity[j];
             arrayCity[j] = tempCity;
 
-            QuickSort(arrayCity,left,i-1);
-            QuickSort(arrayCity,i+1,right);
+            QuickSort(arrayCity,left,j-1);
+            QuickSort(arrayCity,j+1,right);
             break;
         }
 
